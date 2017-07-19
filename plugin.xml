@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+        id="bundle-cordova-webintent"
+      version="1.0.2">
+    <name>WebIntent</name>
+    <description>Web intents for Cordova</description>
+    <license>MIT</license>
+    <keywords>cordova, webintent</keywords>
+
+    <js-module src="www/webintent.js" name="WebIntent">
+        <clobbers target="WebIntent" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebIntent" >
+                <param name="android-package" value="com.borismus.webintent.WebIntent"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+          
+        <!-- adding Intent filter to allow sharing images to app -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </config-file>
+
+        <source-file src="src/android/WebIntent.java" target-dir="src/com/borismus/webintent" />
+    </platform>
+</plugin>
