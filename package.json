@@ -1,16 +1,16 @@
 {
-  "name": "Bundle-Cordova-Webintent",
-  "version": "1.0.2",
+  "name": "Cordova-Webintent",
+  "version": "1.0.0",
   "description": "This plugin enables android devices to receive and process incoming Webintents",
   "cordova": {
-    "id": "bundle-cordova-webintent",
+    "id": "cordova-webintent",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/COMLINE-AG/bundle-cordova-webintent.git"
+    "url": "git+https://github.com/HartHerbert/cordova-webintent.git"
   },
   "keywords": [
     "ecosystem:cordova",
@@ -22,10 +22,10 @@
       "version": ">=3.5.0"
     }
   ],
-  "author": "Lars Karschen",
+  "author": "Herbert Hart",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/COMLINE-AG/bundle-cordova-webintent/issues"
+    "url": "https://github.com/HartHerbert/cordova-webintent/issues"
   },
-  "homepage": "https://github.com/COMLINE-AG/bundle-cordova-webintent/#readme"
+  "homepage": "https://github.com/HartHerbert/cordova-webintent/#readme"
 }

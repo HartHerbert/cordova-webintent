@@ -2,8 +2,8 @@
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android" 
-        id="bundle-cordova-webintent"
-      version="1.0.2">
+        id="cordova-webintent"
+      version="1.0.0">
     <name>WebIntent</name>
     <description>Web intents for Cordova</description>
     <license>MIT</license>
@@ -26,12 +26,11 @@
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <!--<action android:name="android.intent.action.SEND_MULTIPLE" />-->
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="image/*" />
             </intent-filter>
         </config-file>
-
         <source-file src="src/android/WebIntent.java" target-dir="src/com/borismus/webintent" />
     </platform>
 </plugin>
