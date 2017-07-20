@@ -212,6 +212,9 @@ public class WebIntent extends CordovaPlugin {
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
                 String extraName = args.getString(0);
                 i.removeExtra(extraName);
+                ClipData c = new ClipData(null,new String[]{},new ClipData.Item(""));
+                i.setClipData(c);
+                this.cordova.getActivity().setIntent(i);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
             }
 
@@ -246,6 +249,7 @@ public class WebIntent extends CordovaPlugin {
                 ClipData clipData = intent.getClipData();
                 for(int i = 0; i < clipData.getItemCount();i++){
                     ClipData.Item item =  clipData.getItemAt(i);
+
                     Uri uri;
                     try{
                         uri = item.getUri();
