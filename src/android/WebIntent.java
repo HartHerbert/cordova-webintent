@@ -209,13 +209,16 @@ public class WebIntent extends CordovaPlugin {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
                 }
-                Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
+                Intent i = this.cordova.getActivity().getIntent();
+                i.setData(null);
                 String extraName = args.getString(0);
                 i.removeExtra(extraName);
                 ClipData c = new ClipData(null,new String[]{},new ClipData.Item(""));
                 i.setClipData(c);
-                this.cordova.getActivity().setIntent(i);
+                //i.setAction(Intent.ACTION_VIEW);
+                //this.cordova.getActivity().setIntent(i);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                return true;
             }
 
             //return new PluginResult(PluginResult.Status.INVALID_ACTION);
